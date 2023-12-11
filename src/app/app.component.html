@@ -1,0 +1,15 @@
+<div  class="sidebar" [ngClass]="{'open': commonVM.isSidebarOpen}">
+  <app-side-bar *ngIf="commonVM.isSidebarOpen"></app-side-bar>
+</div>
+
+<div id="main" [ngClass]="{'shifted': commonVM.isSidebarOpen}">
+  <div class="row d-flex align-items-center top-row mb-1">
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <span class="d-flex align-items-center"><i class="bi bi-list " (click)="toggleSidebar()"></i>&nbsp; <b>Dashboard</b> </span>
+</div>
+<div class="col-lg-8 col-md-8 col-sm-8 text-end">
+  <span class=" currentDate">{{currentDate | date:'short'}} &nbsp; &nbsp;<i class="bi bi-search search"></i></span>
+</div>
+  </div>
+  <router-outlet></router-outlet>
+</div>

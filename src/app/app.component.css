@@ -1,0 +1,20 @@
+span i{
+    margin-top: -10px;
+    margin: 0%;
+    background-color:none;
+    font-size: 30px;
+    color: black;
+}
+.search{
+    font-size: 20px !important;
+    margin: 0%;
+    background-color: none;
+    color: black;
+}
+.currentDate{
+   font-size: 15px;
+   font-weight: 600     ;
+}
+.top-row{
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}

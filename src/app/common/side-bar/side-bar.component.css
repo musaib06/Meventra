@@ -1,0 +1,57 @@
+
+.logo{
+    font-size: 30px;
+    background-color: rgb(0, 102, 255);
+    color: #ffffff;
+}
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .list-unstyled li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background: rgb(246, 243, 243);
+    color:black;
+    border-bottom: 1px solid gray;
+    transition: all .25s linear;
+  }
+  
+  .list-unstyled li:hover {
+    background:rgb(193, 203, 193);
+    color: black;
+  }
+  
+  .list-unstyled li span.icon-wrapper {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  .list-unstyled li:before {
+    content: '';
+    position: absolute;
+    transition: all .25s linear;
+    width: .5em;
+    height: 2.5em;
+    top: .25em;
+    left: -.5em;
+  }
+  
+.card{
+    box-shadow: 5px 4px 8px 10px rgba(0, 0, 0, 0.1);
+    background: rgb(189, 203, 210);
+    margin-top: 40px;
+    max-width: 170px;
+    margin-left: 10px;
+    border: none;
+
+}
+.card i{
+    font-size: larger;
+    color: #ffffff;
+}

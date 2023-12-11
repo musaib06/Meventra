@@ -1,0 +1,48 @@
+<div >
+    <!-- <span><img src="assets/dummyProfile.jpg" alt="" width="50" height="50" style="margin-left: 50px; border-radius: 50px;margin-bottom: 30px;"></span> -->
+    <i class="bi bi-bootstrap m-5 logo" (click)="toggleSidebar()"></i>
+    <ul class="list-unstyled ">
+        <ng-container >
+            <li routerLinkActive="active" [routerLink]="['/dashboard']" >
+                <i  class=" bi bi-house-door ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> Dashboard</span>
+            </li>
+            <li routerLinkActive="active" [routerLink]="['/classes']" >
+                <i  class=" bi bi-folder ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> classes</span>
+            </li>
+            <li routerLinkActive="active" [routerLink]="['/resources']" >
+                <i  class=" bi bi-book ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> Resources</span>
+            </li>
+            <!-- <li routerLinkActive="active" [routerLink]="['/loantype']" >
+                <i  class=" bi bi-bank ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> Loan Type</span>
+            </li> -->
+            <li routerLinkActive="active" [routerLink]="['/learning']" >
+                <i  class=" bi  bi-calendar ms-3 fs-5 "></i>
+                <span class="item-name ms-2 ">Learning Plan</span>
+            </li>
+            <li routerLinkActive="active" [routerLink]="['/chat']" >
+                <i  class=" bi bi-chat-left ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> Chat</span>
+            </li>
+
+            <li routerLinkActive="active" [routerLink]="['/settings']" >
+                <i  class=" bi  bi-pencil-square ms-3 fs-5 "></i>
+                <span class="item-name ms-2 "> Settings</span>
+            </li>
+        </ng-container>
+    
+    
+    </ul>
+
+    <div class="card ">
+        <div class="card-body text-center m ">
+            <i class="bi bi-card-checklist text-center"></i>
+          <p>Updrade to <b>PRO</b>for more Resources</p>
+          <button class="btn btn-primary text-light">Upgrade</button>
+        </div>
+    </div>
+</div>
+

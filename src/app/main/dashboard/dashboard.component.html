@@ -1,0 +1,386 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-sm-10 ">
+            <div class="row p-0 row-1">
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 m-0 ">
+                    <h3 class="text-center heading-1">Welcome Back {{userArrayNew[0].username}}</h3>
+                    <p class="welcomeNote">Excelent Performance in this week! Keep it up </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 p-0 m-0 text-center">
+                    <img src="assets/dashboardPic.avif" alt="pic not available" width="100%" height="120">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="card mt-1 latestResultsCard">
+                        <div class="card-body ">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <h5>Latest Results </h5>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+                                    <h5>more <i class="bi bi-arrow-right"></i></h5>
+                                </div>
+                            </div>
+                            <div class="row p-2" *ngFor="let item of dashboardModelObject.lastestResultsArray">
+                                <div class="col-lg-6 col-md-6 col-sm-6 ">
+                                    {{ item.quizTitle }}
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="progress progress-bar">
+                                        <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                            aria-valuemin="0" aria-valuemax="100" [style.width.%]="item.score"></div>
+                                        <span>{{item.score}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="card mt-1 VbarsCard">
+                        <div class="card-body ">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <span class="d-block">
+                                    <p class="d-inline mx-2">Mon</p>
+                                    <p class="d-inline ms-3">Tue</p>
+                                    <p class="d-inline ms-4">Wed</p>
+                                    <p class="d-inline ms-4">Thu</p>
+                                    <p class="d-inline ms-4">Fri</p>
+                                    <p class="d-inline ms-4">Sat</p>
+                                    <p class="d-inline ms-4">Sun</p>
+                                </span>
+                            </div>
+                            <div class="d-flex flex-row">
+                                <div class="progress progress-bar-vertical mx-3">
+
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 80%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.mondayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.mondayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.mondayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.mondayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.mondayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.mondayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.mondayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.mondayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.mondayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.mondayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.mondayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.mondayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.tuesdayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.wednesdayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.thursdayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.thursdayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.thursdayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.thursdayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.thursdayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.thursdayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.thursdayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.thursdayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.thursdayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.thursdayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.thursdayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.thursdayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.fridayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.fridayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.fridayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.fridayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.fridayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.fridayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.fridayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.fridayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.fridayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.fridayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.fridayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.fridayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.saturdayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.saturdayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.saturdayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.saturdayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.saturdayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.saturdayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.saturdayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.saturdayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.saturdayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.saturdayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.saturdayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.saturdayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress progress-bar-vertical mx-3">
+                                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                        aria-valuemin="0" aria-valuemax="100" style="height: 85%;">
+                                        <div class="progress-category" aria-valuemax="100"
+                                            [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.sundayObj.Listening,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.sundayObj.Listening)}">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.sundayObj.Listening}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.sundayObj.Vocabulary,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.sundayObj.Vocabulary)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.sundayObj.Vocabulary}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.sundayObj.Writing,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.sundayObj.Writing)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.sundayObj.Writing}}%</span>
+                                        </div>
+                                        <div class="progress-category" [ngStyle]="{
+                                        'height.%': dashboardModelObject.timeSpentDataObject.days.sundayObj.Grammar,
+                                        'background-color': getCustomColor(dashboardModelObject.timeSpentDataObject.days.sundayObj.Grammar)
+                                      }">
+                                            <span>{{dashboardModelObject.timeSpentDataObject.days.sundayObj.Grammar}}%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <span class="d-block">
+                                    <p class="d-inline "><i class="bi bi-circle-fill dot-1"></i>&nbsp;Listening </p>
+                                    <p class="d-inline "><i class="bi bi-circle-fill dot-2"></i>&nbsp;Vocabulary </p>
+                                    <p class="d-inline  "><i class="bi bi-circle-fill dot-3"></i>&nbsp;Grammar</p>
+                                    <p class="d-inline ms-1"><i class="bi bi-circle-fill dot-4"></i>&nbsp;Writing</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-6">Your Courses</div>
+                <div class="col-lg-6 col-md-6 col-sm-6 text-end"><i class="bi bi-arrow-right"></i></div>
+            </div>
+
+            <div class="row p-2 fixed-row">
+                <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+                    <div class="card">
+                        <div class="card-body bg-c-blue">
+                            <div class="card-title d-block">
+                                <i class="bi bi-card-list d-inline"></i>&nbsp;
+                                <h6 class="d-inline me-4">Business English</h6>
+                                <i class="bi bi-arrow-right d-inline "></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+                    <div class="card">
+                        <div class="card-body bg-c-green">
+                            <div class="card-title  d-block">
+                                <i class="bi bi-card-list d-inline"></i>&nbsp;
+                                <h6 class="d-inline me-4">Common English</h6>
+                                <i class="bi bi-arrow-right d-inline "></i>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 p-2">
+                    <div class="card">
+                        <div class="card-body  bg-c-pink">
+                            <div class="card-title  d-block">
+                                <i class="bi bi-card-list d-inline"></i>&nbsp;
+                                <h6 class="d-inline me-4">Business Study</h6>
+                                <i class="bi bi-arrow-right d-inline"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2 rigthSideBar text-center">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 mb-5">
+                    Logout
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 mb-5 text-end">
+                    <i class="bi bi-arrow-right-circle"></i>
+                </div>
+                <div class="row" *ngIf="userArrayNew">
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1 me-3 text-center ">
+                        <div class="imgCol">
+
+                            <span><img src="assets/dummyProfile.jpg" alt="Not Found" class="profile" width="60"
+                                    height="60"></span>
+                        </div>
+                        <h6>{{userArrayNew[0].username}}</h6>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p>Math</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="progress progress-bar">
+                                <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    [style.width.%]="userArrayNew[0].courses.Maths"></div>
+                                <span>{{userArrayNew[0].courses.Maths}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p>Spanish</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 text-end mt-1 ">
+                            <div class="progress progress-bar">
+                                <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="85"
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    [style.width.%]="userArrayNew[0].courses.Spanish"></div>
+                                <span>{{userArrayNew[0].courses.Spanish}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h6>Reminders</h6>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 text-end">
+                    <i class="bi bi-bell"></i>
+                </div>
+                <div class="row" *ngFor="let item of reminderArray; let i = index">
+                    <ng-container *ngIf="i === 0">
+                        <div class="col-lg-2 col-md-2 col-sm-2">
+                            <i class="bi bi-app"></i>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 d-block">
+                            <span class="d-inline"><b>{{ item.title}}</b></span>
+                            <p>{{ item.description }}</p>
+                            <p>{{ item.datetime }}</p>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
